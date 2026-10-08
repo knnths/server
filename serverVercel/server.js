@@ -60,7 +60,7 @@ app.use("/qrs", express.static(QR_DIR));
 // ====================================================
 app.post("/login", (req, res) => {
   const { correo, password } = req.body;
-  const sql = "SELECT * FROM usuarios WHERE usuario = ? AND clave = ?";
+  const sql = "SELECT * FROM usuarios WHERE nombre = ? AND clave = ?";
   pool.query(sql, [correo, password], (err, result) => {
     if (err) return res.json({ status: "error", mensaje: err.message });
     if (result.length === 0)

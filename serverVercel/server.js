@@ -59,15 +59,15 @@ app.use("/qrs", express.static(QR_DIR));
 // LOGIN
 // ====================================================
 app.post("/login", (req, res) => {
-  const { nombre, password } = req.body;
-  const sql = "SELECT * FROM usuarios WHERE nombre = ? AND password = ?";
-  pool.query(sql, [nombre, password], (err, result) => {
+  const { correo, password } = req.body;
+  const sql = "SELECT * FROM usuarios WHERE usuario = ? AND clave = ?";
+  pool.query(sql, [correo, password], (err, result) => {
     if (err) return res.json({ status: "error", mensaje: err.message });
     if (result.length === 0)
       return res.json({ status: "error", mensaje: "Usuario o contraseña incorrectos" });
 
     const usuario = result[0];
-    res.json({ status: "ok", rol: usuario.rol, nombre: usuario.nombre });
+    res.json({ status: "ok", rol: usuario.rol, nombre: usuario.usuario });
   });
 });
 

@@ -1,10 +1,9 @@
 {
-  "name": "inventario_api",
+  "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "API de inventario escolar",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "keywords": [],
@@ -12,14 +11,10 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "bcryptjs": "^3.0.3",
-    "body-parser": "^2.3.0",
-    "cors": "^2.8.6",
+    "cors": "^2.8.5",
     "exceljs": "^4.4.0",
-    "express": "^5.2.1",
-    "jsonwebtoken": "^9.0.3",
-    "mysql": "^2.18.1",
-    "mysql2": "^3.24.4",
+    "express": "^4.19.2",
+    "mysql2": "^3.11.0",
     "qrcode": "^1.5.4"
   }
 }
